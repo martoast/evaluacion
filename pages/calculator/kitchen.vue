@@ -1,3 +1,7 @@
-<template>
-  <div>kitchen view</div>
-</template>
+<template></template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped></style>

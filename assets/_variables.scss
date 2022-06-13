@@ -1,4 +1,4 @@
-$primary: #4F01B0 !default;
+$primary: #4f01b0 !default;
 $secondary: #b591f9 !default;
 $light-gray: #ccd2dd !default;
 $green: #58ff9d !default;
@@ -8,7 +8,8 @@ $default-colors: map-merge(
   (
     "primary": $primary,
     "secondary": $secondary,
-    "success": $green
+    "success": $green,
+    "light-gray": $light-gray,
   ),
   $default-colors
 );

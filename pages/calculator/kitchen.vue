@@ -30,9 +30,14 @@
                     alt="line image"
                   />
 
-                  <div class="d-flex justify-content-between links">
-                    <span>Back</span>
-                    <span>Customize</span>
+                  <div class="links">
+                    <a class="text-white text-decoration-none" href="#">Back</a>
+                    <a class="text-white text-decoration-none" href="#"
+                      >Customize
+                      <img
+                        src="/images/kitchen/arrow-bottom-right-thick.svg"
+                        alt="arrow icon"
+                    /></a>
                   </div>
                 </div>
               </div>
@@ -64,7 +69,9 @@ export default {
   font-family: "Poppins";
   letter-spacing: 0.02em;
 
-  img {
+  .logo-customizer,
+  &-image,
+  .line {
     display: block;
     max-width: 100%;
   }
@@ -91,6 +98,9 @@ export default {
   }
 
   .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 20rem;
   }
 

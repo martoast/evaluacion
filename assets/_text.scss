@@ -1,0 +1,5 @@
+@each $color, $value in $default-colors {
+    .text-#{$color} {
+        color: $value !important;
+    }
+}

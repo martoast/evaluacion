@@ -2,3 +2,13 @@ $primary: #4F01B0 !default;
 $secondary: #b591f9 !default;
 $light-gray: #ccd2dd !default;
 $green: #58ff9d !default;
+
+$default-colors: () !default;
+$default-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $green
+  ),
+  $default-colors
+);

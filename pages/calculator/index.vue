@@ -6,6 +6,6 @@
 
 <style scoped>
   .bg-img{
-    background: url("images/purple-glass.png");
+    background: url("/images/purple-glass.png");
   }
 </style>

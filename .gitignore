@@ -88,3 +88,6 @@ sw.*
 
 #npmrc
 .npmrc
+
+#env file
+.env

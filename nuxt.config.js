@@ -1,4 +1,6 @@
 export default {
+  ssr: false,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "evaluacion",
@@ -18,7 +20,7 @@ export default {
   css: ["~/assets/app.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/bootstrap-vue.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -27,7 +29,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["bootstrap-vue/nuxt"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

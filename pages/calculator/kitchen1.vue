@@ -46,8 +46,11 @@
               </div>
             </div>
           </div>
+
+          <footer class="footer">
+            <img src="/images/kitchen/footer-logo.svg" alt="footer logo" />
+          </footer>
         </div>
-        <footer></footer>
       </div>
     </div>
   </div>
@@ -125,20 +128,26 @@ export default {
 
     &-container {
       &--1 {
+        background-color: #361983;
         background-image: url(/images/purple-glass.png);
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
         margin: 0 auto;
 
         max-width: 76rem;
 
         @media screen and (min-width: 76rem) {
+          background-color: transparent;
+          border-radius: 0.5rem;
           padding: 4rem;
         }
       }
 
       &--2 {
+        position: relative;
+
         @media screen and (min-width: 76rem) {
           background-image: url(/images/kitchen/hero.svg);
           background-repeat: no-repeat;
@@ -183,6 +192,17 @@ export default {
         order: 1;
         overflow: hidden;
       }
+    }
+  }
+
+  .footer {
+    padding: 1rem;
+
+    @media screen and (min-width: 76rem) {
+      padding: 0;
+      position: absolute;
+      right: 0;
+      bottom: -40px;
     }
   }
 }

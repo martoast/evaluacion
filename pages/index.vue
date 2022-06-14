@@ -75,6 +75,7 @@
                                                 fluid
                                                 block
                                                 src="/images/adu.png"
+                                                class="catalog-img"
                                             />
                                         </b-col>
                                         <b-col
@@ -85,17 +86,22 @@
                                                 fluid
                                                 block
                                                 src="/images/bathroom.png"
+                                                class="catalog-img"
                                             />
                                         </b-col>
                                         <b-col
                                             cols="4"
                                             class="d-inline-block grid-catalog-col"
                                         >
-                                            <b-img
-                                                fluid
-                                                block
-                                                src="/images/kitchen.png"
-                                            />
+                                            <nuxt-link
+                                                class="text-white text-decoration-none"
+                                                to="/calculator/step-2"
+                                                ><b-img
+                                                    fluid
+                                                    block
+                                                    src="/images/kitchen.png"
+                                                    class="catalog-img"
+                                            /></nuxt-link>
                                         </b-col>
                                     </b-row>
                                 </b-col>
@@ -149,7 +155,7 @@ export default {
 
     methods: {
         redirect() {
-            this.$router.push("/calculator");
+            this.$router.push("/calculator/step-2");
         },
     },
 };
@@ -194,6 +200,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
 button:focus {
     box-shadow: none;
@@ -222,6 +229,7 @@ button:focus {
     height: calc(100% + 128px);
     width: calc(100% + 64px);
     height: calc(100% + 128px);
+    z-index: -1;
 
     @media (max-width: 1180px) {
         margin-top: -16px;
@@ -229,5 +237,9 @@ button:focus {
         height: calc(100% + 32px);
         width: calc(100% + 16px);
     }
+}
+
+.catalog-img {
+    cursor: pointer;
 }
 </style>

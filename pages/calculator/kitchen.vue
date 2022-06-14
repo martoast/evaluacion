@@ -1,53 +1,18 @@
 <template>
-  <div>
-    <div class="main-container">
-      <b-navbar class="main-navbar">
-        <div class="nav-logo">
-          <b-avatar src="/images/multitaskr-avatar.png"></b-avatar>
-        </div>
+  <div class="main-container">
+    <div class="content-container">
+      <b-img
+        src="/images/bg-kitchen.png"
+        class="vh-100 position-absolute"
+        fluid-grow
+      ></b-img>
 
-        <b-navbar-nav class="flex-column">
-          <b-nav-item>
-            <b-img src="/kitchen-icons/house-door-fill.svg"></b-img>
-          </b-nav-item>
-          <b-nav-item>
-            <b-img src="/kitchen-icons/layers-half.svg"></b-img>
-          </b-nav-item>
-          <b-nav-item>
-            <b-img src="/kitchen-icons/calculator-fill.svg"></b-img>
-          </b-nav-item>
-          <b-nav-item>
-            <b-img src="/kitchen-icons/calendar2-date-fill.svg"></b-img>
-          </b-nav-item>
-          <b-nav-item>
-            <b-img src="/kitchen-icons/info-circle-fill.svg"></b-img>
-          </b-nav-item>
-        </b-navbar-nav>
+      <div class="calculator-card-container">
+        <div class="bg-mask"></div>
+        <div class="calculator-card-group">
+          <monthly-payment></monthly-payment>
 
-        <b-navbar-nav class="flex-column">
-          <b-nav-item>
-            <b-img src="/kitchen-icons/bell-fill.svg"></b-img>
-          </b-nav-item>
-          <b-nav-item>
-            <b-avatar src="/images/homeowner.png"></b-avatar>
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-navbar>
-
-      <div class="content-container">
-        <b-img
-          src="/images/bg-kitchen.png"
-          class="vh-100 position-absolute"
-          fluid-grow
-        ></b-img>
-
-        <div class="calculator-card-container">
-          <div class="bg-mask"></div>
-          <div class="calculator-card-group">
-            <monthly-payment></monthly-payment>
-
-            <equity-gain></equity-gain>
-          </div>
+          <equity-gain></equity-gain>
         </div>
       </div>
     </div>
@@ -60,6 +25,8 @@ import EquityGain from "~/components/cards/EquityGain.vue";
 import PriceRange from "~/components/cards/PriceRange.vue";
 
 export default {
+  layout: "main",
+
   components: {
     MonthlyPayment,
     EquityGain,
@@ -78,6 +45,7 @@ export default {
 }
 
 .main-container {
+  width: 100%;
   display: flex;
 }
 

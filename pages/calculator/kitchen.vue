@@ -60,6 +60,17 @@ export default {
   components: {
     KitchensGrid,
   },
+
+  mounted() {
+    const gsap = this.$gsap;
+    const els = ".block__right > div > *";
+
+    gsap.set(els, {
+      opacity: 0,
+      x: "30%",
+    });
+    gsap.to(els, { opacity: 1, stagger: 0.1, x: "0" });
+  },
 };
 </script>
 

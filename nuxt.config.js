@@ -20,7 +20,7 @@ export default {
   css: ["~/assets/app.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/bootstrap-vue.js"],
+  plugins: ["~/plugins/bootstrap-vue.js", "~/plugins/gsap.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

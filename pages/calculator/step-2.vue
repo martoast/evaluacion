@@ -34,19 +34,19 @@
                                     />
 
                                     <div class="links">
-                                        <a
+                                        <nuxt-link
                                             class="text-white text-decoration-none"
-                                            href="#"
-                                            >Back</a
+                                            to="/"
+                                            >Back</nuxt-link
                                         >
-                                        <a
+                                        <nuxt-link
                                             class="text-white text-decoration-none"
-                                            href="#"
+                                            to="kitchen"
                                             >Customize
                                             <img
                                                 src="/images/kitchen/arrow-bottom-right-thick.svg"
                                                 alt="arrow icon"
-                                        /></a>
+                                        /></nuxt-link>
                                     </div>
                                 </div>
                             </div>

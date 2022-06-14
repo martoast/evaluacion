@@ -14,9 +14,7 @@
                                     />
 
                                     <h1>
-                                        <span class="d-md-block"
-                                            >Customize</span
-                                        >
+                                        <span class="d-block">Customize</span>
                                         your
                                         <strong>Kitchen</strong>
                                     </h1>

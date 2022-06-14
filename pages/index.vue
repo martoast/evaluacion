@@ -2,7 +2,7 @@
     <div class="main-container w-100 p-6 pl-4">
         <div class="content-container bg-img" style="padding: 128px">
             <b-row class="position-relative square" no-gutters>
-                <b-col col="7" class="pr-0">
+                <b-col cols="7" class="pr-0">
                     <div class="w-100 h-100 position-relative">
                         <b-img
                             src="/images/office.png"
@@ -17,7 +17,7 @@
                         />
                     </div>
                 </b-col>
-                <b-col col="5" class="pl-0 align-self-end">
+                <b-col cols="5" class="pl-0 align-self-end">
                     <div style="margin-top: 64px">
                         <b-img src="/images/logo-customizer-with-bg.svg" />
                     </div>

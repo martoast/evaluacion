@@ -1,62 +1,57 @@
 <template>
   <b-card
-    class="border-radius-05 border-0 custom-card-shadow h-auto"
-    style="margin-right: 24px"
+    class="custom-card border-radius-05 border-0 custom-card-shadow h-auto"
     no-body
   >
-    <b-card-body style="padding: 20px">
-      <b-card-sub-title
-        sub-title-text-variant="primary"
-        class="font-weight-600 font-size-14"
-        style="margin-bottom: 24px"
-      >
-        <b-img src="/icons/monthly-payment.svg"></b-img> Monthly Payment Range*
-      </b-card-sub-title>
+    <b-card-body
+      class="d-flex flex-column"
+      style="
+        padding-inline: 24px;
+        padding-bottom: 24px;
+        padding-top: 48px;
+        flex: 1;
+      "
+    >
+      <b-img
+        src="/images/bg-monthly-payment.png"
+        class="position-absolute h-100"
+        style="top: 0; left: 0"
+        fluid-grow
+      ></b-img>
 
-      <div class="text-center" style="margin-bottom: 20px">
-        <b-img src="/icons/slider.svg"></b-img>
-      </div>
+      <div class="text-center" style="z-index: 1">
+        <h1 class="mb-3 font-weight-bolder" style="color: #fff">$399 * USD</h1>
 
-      <div class="d-flex align-items-center">
-        <span class="text-light-gray font-size-10">*Choose Loan Terms</span>
-
-        <b-dropdown
-          variant="link"
-          class="custom-dropdown ml-3"
-          menu-class="w-100"
-          toggle-class="d-flex align-items-center justify-content-between text-left font-size-14"
-          block
-          no-caret
-          style="flex: 1 1 0"
+        <p
+          class="font-size-18 text-light-dark-purp"
+          style="margin-bottom: 24px"
         >
-          <template #button-content>
-            <span>5 years</span>
-            <b-icon
-              icon="chevron-down"
-              class="custom-caret font-size-14 text-light-gray"
-            ></b-icon>
-          </template>
+          Montly payment 4.5% APR
+        </p>
 
-          <b-dropdown-item href="#">5 years</b-dropdown-item>
-          <b-dropdown-item href="#">10 years</b-dropdown-item>
-          <b-dropdown-item href="#">30 years</b-dropdown-item>
-        </b-dropdown>
+        <div>
+          <b-row no-gutters>
+            <b-col class="mr-2">
+              <b-button
+                style="background: #58ff9d"
+                class="font-weight-600 font-size-14 text-primary"
+                block
+              >
+                Save
+              </b-button>
+            </b-col>
+            <b-col class="ml-2">
+              <b-button
+                style="background: transparent"
+                class="font-weight-600 font-size-14 text-secondary border-secondary"
+                block
+              >
+                Share
+              </b-button>
+            </b-col>
+          </b-row>
+        </div>
       </div>
     </b-card-body>
   </b-card>
 </template>
-
-<style lang="scss">
-.custom-dropdown {
-  .dropdown-toggle {
-    padding-block: 8px;
-    color: #222222;
-    border: 1px solid #ccd2dd;
-    text-decoration: none;
-  }
-
-  &.show .custom-caret {
-    transform: rotate(180deg);
-  }
-}
-</style>

@@ -1,189 +1,140 @@
 <template>
-  <div class="kitchen">
-    <div class="container-fluid">
-      <div class="block-container block-container--1">
-        <div class="block-container block-container--2">
-          <div class="block-container block-container--3">
-            <div class="block">
-              <div class="block__right">
-                <div>
-                  <img
-                    class="logo-customizer"
-                    src="/images/kitchen/logo-customizer.svg"
-                    alt="logo customizer image"
-                  />
+  <div>
+    <div class="main-container">
+      <b-navbar class="main-navbar">
+        <div class="nav-logo">
+          <b-avatar src="/images/multitaskr-avatar.png"></b-avatar>
+        </div>
 
-                  <h1>
-                    <span class="d-md-block">Customize</span> your
-                    <strong>Kitchen</strong>
-                  </h1>
+        <b-navbar-nav class="flex-column">
+          <b-nav-item>
+            <b-img src="/kitchen-icons/house-door-fill.svg"></b-img>
+          </b-nav-item>
+          <b-nav-item>
+            <b-img src="/kitchen-icons/layers-half.svg"></b-img>
+          </b-nav-item>
+          <b-nav-item>
+            <b-img src="/kitchen-icons/calculator-fill.svg"></b-img>
+          </b-nav-item>
+          <b-nav-item>
+            <b-img src="/kitchen-icons/calendar2-date-fill.svg"></b-img>
+          </b-nav-item>
+          <b-nav-item>
+            <b-img src="/kitchen-icons/info-circle-fill.svg"></b-img>
+          </b-nav-item>
+        </b-navbar-nav>
 
-                  <img
-                    class="kitchen-image"
-                    src="/images/kitchen/kitchen.svg"
-                    alt="Kitchen image"
-                  />
+        <b-navbar-nav class="flex-column">
+          <b-nav-item>
+            <b-img src="/kitchen-icons/bell-fill.svg"></b-img>
+          </b-nav-item>
+          <b-nav-item>
+            <b-avatar src="/images/homeowner.png"></b-avatar>
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-navbar>
 
-                  <img
-                    class="line"
-                    src="/images/kitchen/line.svg"
-                    alt="line image"
-                  />
+      <div class="content-container">
+        <b-img
+          src="/images/bg-kitchen.png"
+          class="vh-100 position-absolute"
+          fluid-grow
+        ></b-img>
 
-                  <div class="links">
-                    <a class="text-white text-decoration-none" href="#">Back</a>
-                    <a class="text-white text-decoration-none" href="#"
-                      >Customize
-                      <img
-                        src="/images/kitchen/arrow-bottom-right-thick.svg"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="block__left">
-                <kitchens-grid></kitchens-grid>
-              </div>
-            </div>
+        <div class="calculator-card-container">
+          <div class="bg-mask"></div>
+          <div class="calculator-card-group">
+            <monthly-payment></monthly-payment>
+
+            <equity-gain></equity-gain>
           </div>
         </div>
-        <footer></footer>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import KitchensGrid from "@/components/kitchen/KitchensGrid.vue";
+import MonthlyPayment from "~/components/cards/MonthlyPayment.vue";
+import EquityGain from "~/components/cards/EquityGain.vue";
+import PriceRange from "~/components/cards/PriceRange.vue";
 
 export default {
   components: {
-    KitchensGrid,
-  },
-
-  mounted() {
-    const gsap = this.$gsap;
-    const els = ".block__right > div > *";
-
-    gsap.set(els, {
-      opacity: 0,
-      x: "30%",
-    });
-    gsap.to(els, { opacity: 1, stagger: 0.1, x: "0" });
+    MonthlyPayment,
+    EquityGain,
+    PriceRange,
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.kitchen {
-  color: #fff;
-  font-family: "Poppins";
-  letter-spacing: 0.02em;
+<style lang="scss">
+.custom-card-shadow {
+  box-shadow: 0px 3.20329px 12.8132px rgba(0, 0, 0, 0.15);
+}
 
-  .logo-customizer,
-  &-image,
-  .line {
-    display: block;
-    max-width: 100%;
+.border-radius-05 {
+  border-radius: 0.5rem;
+}
+
+.main-container {
+  display: flex;
+}
+
+.content-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+}
+
+.main-navbar {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0;
+  border: 1px solid rgba(#ccd2dd, 0.16);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.1) 100.24%
+  );
+  backdrop-filter: blur(42px);
+
+  .nav-logo {
+    padding: 17px 12px;
   }
 
-  .logo-customizer {
-    margin-bottom: 3.5625rem;
-  }
-
-  h1 {
-    font-weight: 400;
-    line-height: 3.3125rem;
-
-    strong {
-      font-weight: 600;
-    }
-  }
-
-  &-image {
-    margin: 3.5625rem 0;
-  }
-
-  .line {
-    margin-bottom: 1.625rem;
-  }
-
-  .links {
+  .nav-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 20rem;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.calculator-card-container {
+  position: relative;
+  margin-top: auto;
+
+  .bg-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #ffffff, #ffffff),
+      linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.1) 100.24%);
+    mix-blend-mode: lighten;
+    opacity: 0.9;
+    backdrop-filter: blur(190.076px);
   }
 
-  .block {
-    @media screen and (min-width: 76rem) {
-      border: 0.375rem solid #ffffff;
-      border-radius: 0.25rem;
-
-      display: flex;
-    }
-
-    &-container {
-      &--1 {
-        background-image: url(/images/purple-glass.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 0.5rem;
-        margin: 0 auto;
-
-        max-width: 76rem;
-
-        @media screen and (min-width: 76rem) {
-          padding: 4rem;
-        }
-      }
-
-      &--2 {
-        @media screen and (min-width: 76rem) {
-          background-image: url(/images/kitchen/hero.svg);
-          background-repeat: no-repeat;
-          background-size: calc(50% + 2rem) 100%;
-        }
-      }
-
-      &--3 {
-        @media screen and (min-width: 76rem) {
-          padding: 4rem 0 4rem 4rem;
-        }
-      }
-    }
-
-    &__right,
-    &__left {
-      @media screen and (min-width: 76rem) {
-        width: 50%;
-      }
-    }
-
-    &__right {
-      font-weight: 600;
-      font-size: 1.1765rem;
-      line-height: 133%;
-      margin: 1rem 0;
-      padding: 1rem;
-
-      @media screen and (min-width: 76rem) {
-        display: flex;
-        align-items: center;
-        order: 2;
-
-        padding: 0 6.25rem;
-      }
-    }
-
-    &__left {
-      background-color: #fff;
-
-      @media screen and (min-width: 76rem) {
-        order: 1;
-        overflow: hidden;
-      }
-    }
+  .calculator-card-group {
+    display: flex;
+    padding: 24px;
   }
 }
 </style>

@@ -3,3 +3,13 @@
         color: $value !important;
     }
 }
+
+@each $size, $value in $font-sizes {
+    .font-size-#{$size} {
+        font-size: $value !important;
+    }
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}

@@ -1,17 +1,17 @@
 <template>
-  <div class="d-flex">
-    <navbar ref="navbar"></navbar>
+    <div class="d-flex">
+        <navbar ref="navbar"></navbar>
 
-    <nuxt />
-  </div>
+        <nuxt />
+    </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
 
 export default {
-  components: {
-    Navbar,
-  },
+    components: {
+        Navbar,
+    },
 };
 </script>

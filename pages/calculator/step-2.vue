@@ -102,10 +102,11 @@ export default {
     font-family: "Poppins", sans-serif;
     letter-spacing: 0.02em;
     margin: 0 auto;
+    overflow: auto;
     padding: 4rem 0;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

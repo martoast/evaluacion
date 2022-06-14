@@ -1,6 +1,19 @@
 <template>
   <div class="main-container">
     <div class="content-container">
+      <div
+        class="d-flex align-items-center justify-content-between"
+        style="padding: 24px; z-index: 1"
+      >
+        <div class="cal-nav">
+          <b-link class="cal-nav-item">Home</b-link>
+          <span class="mx-2">›</span>
+          <b-link class="cal-nav-item">Kitchen</b-link>
+        </div>
+
+        <b-img src="/icons/logo-customizer.svg"></b-img>
+      </div>
+
       <b-img
         src="/images/bg-kitchen.png"
         class="vh-100 position-absolute"
@@ -10,9 +23,13 @@
       <div class="calculator-card-container">
         <div class="bg-mask"></div>
         <div class="calculator-card-group">
-          <monthly-payment></monthly-payment>
+          <monthly-payment-range></monthly-payment-range>
 
           <equity-gain></equity-gain>
+
+          <price-range></price-range>
+
+          <monthly-payment></monthly-payment>
         </div>
       </div>
     </div>
@@ -20,24 +37,44 @@
 </template>
 
 <script>
-import MonthlyPayment from "~/components/cards/MonthlyPayment.vue";
+import MonthlyPaymentRange from "~/components/cards/MonthlyPaymentRange.vue";
 import EquityGain from "~/components/cards/EquityGain.vue";
 import PriceRange from "~/components/cards/PriceRange.vue";
+import MonthlyPayment from "~/components/cards/MonthlyPayment.vue";
 
 export default {
   layout: "main",
 
   components: {
-    MonthlyPayment,
+    MonthlyPaymentRange,
     EquityGain,
     PriceRange,
+    MonthlyPayment,
   },
 };
 </script>
 
 <style lang="scss">
+.cal-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #58ff9d;
+  border-radius: 16px;
+
+  .cal-nav-item {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4e04af;
+  }
+}
+
 .custom-card-shadow {
   box-shadow: 0px 3.20329px 12.8132px rgba(0, 0, 0, 0.15);
+}
+
+.custom-card {
+  width: 100%;
 }
 
 .border-radius-05 {
@@ -103,6 +140,13 @@ export default {
   .calculator-card-group {
     display: flex;
     padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+
+    @media (max-width: 820px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 </style>

@@ -1,20 +1,24 @@
 <template>
-  <div>
-    <b-card class="border-05 border-0 shadow mt-4" no-body>
-      <b-card-body class="p-4">
-        <b-card-sub-title
-          sub-title-text-variant="primary"
-          class="font-weight-bold mb-3"
-        >
-          <b-img src="/icons/home-cost.svg"></b-img> Home Equity Gain
-        </b-card-sub-title>
+  <b-card
+    class="custom-card border-radius-05 border-0 custom-card-shadow h-auto"
+    no-body
+  >
+    <b-card-body class="d-flex flex-column" style="padding: 20px; flex: 1">
+      <b-card-sub-title
+        sub-title-text-variant="primary"
+        class="font-weight-600 font-size-14"
+        style="margin-bottom: 24px"
+      >
+        <b-img src="/icons/home-equity.svg"></b-img> Net Price Range
+      </b-card-sub-title>
 
-        <div class="text-center">
-          <b-img src="/icons/price-range.svg"></b-img>
+      <div class="h-100 d-flex flex-column justify-content-between">
+        <div class="text-center" style="margin-bottom: 20px">
+          <b-img src="/icons/price-range.svg" fluid-grow></b-img>
         </div>
 
-        <p class="text-light-gray">*USD - US Dollar</p>
-      </b-card-body>
-    </b-card>
-  </div>
+        <span class="mt-2 text-light-gray font-size-10">*USD - US Dollar</span>
+      </div>
+    </b-card-body>
+  </b-card>
 </template>

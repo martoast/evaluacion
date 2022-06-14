@@ -35,7 +35,7 @@
 
 <style lang="scss">
 .main-navbar {
-    position: relative;
+    position: sticky;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;

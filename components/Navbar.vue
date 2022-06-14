@@ -41,7 +41,7 @@
     justify-content: space-between;
     height: 100vh;
     padding: 0;
-    border: 1px solid rgba(#ccd2dd, 0.16);
+    border: 1px solid rgba(#ccd2dd, 0.4);
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.6) 0%,

@@ -1,33 +1,40 @@
 <template>
-    <div class="main-container">
-        <Navbar />
-        <b-container class="bg-img ml-3" style="margin: 4rem" fluid>
-            <b-row class="p-6">
-                <b-col md="7" class="pr-0">
-                    <div class="w-100">
-                        <b-img src="/images/office.png" fluid-grow block />
+    <div class="main-container w-100 p-6 pl-4">
+        <div class="content-container bg-img" style="padding: 128px">
+            <b-row class="position-relative square" no-gutters>
+                <b-col col="7" class="pr-0">
+                    <div class="w-100 h-100 position-relative">
+                        <b-img
+                            src="/images/office.png"
+                            class="position-absolute"
+                            style="
+                                margin-top: -64px;
+                                margin-left: -64px;
+                                height: calc(100% + 128px);
+                                width: calc(100% + 64px);
+                                height: calc(100% + 128px);
+                            "
+                        />
                     </div>
                 </b-col>
-                <b-col md="5" class="pl-0 align-self-end">
-                    <div>
-                        <div class="bg-blur-light">
-                            <b-img
-                                class="mt-3 ml-3"
-                                src="/images/logo-customizer.svg"
-                            />
-                        </div>
-                        <b-row class="px-5">
+                <b-col col="5" class="pl-0 align-self-end">
+                    <div style="margin-top: 64px">
+                        <b-img src="/images/logo-customizer-with-bg.svg" />
+                    </div>
+
+                    <div class="pt-0 p-6">
+                        <b-row no-gutters>
                             <b-col
                                 cols="12"
                                 class="mb-4"
-                                style="margin-top: 3.6rem"
+                                style="margin-top: 3rem"
                             >
                                 <h2
                                     class="mb-4 text-white"
                                     style="
                                         font-size: 2.5rem;
                                         letter-spacing: 2px;
-                                        font-weight: 300;
+                                        font-weight: 400;
                                         max-width: 80%;
                                         line-height: 1.1;
                                     "
@@ -40,10 +47,13 @@
                                 </h2>
                             </b-col>
                         </b-row>
-                        <b-row md="12" class="px-5 mt-1">
+                        <b-row md="12" no-gutters>
                             <b-col cols="12">
-                                <b-row>
-                                    <b-col cols="4" class="d-inline-block">
+                                <b-row class="grid-catalog">
+                                    <b-col
+                                        cols="4"
+                                        class="d-inline-block grid-catalog-col"
+                                    >
                                         <b-img
                                             fluid-grow
                                             block
@@ -51,7 +61,10 @@
                                             class="img-fluid"
                                         />
                                     </b-col>
-                                    <b-col cols="4" class="d-inline-block">
+                                    <b-col
+                                        cols="4"
+                                        class="d-inline-block grid-catalog-col"
+                                    >
                                         <b-img
                                             fluid-grow
                                             block
@@ -59,7 +72,10 @@
                                             class="img-fluid"
                                         />
                                     </b-col>
-                                    <b-col cols="4" class="d-inline-block">
+                                    <b-col
+                                        cols="4"
+                                        class="d-inline-block grid-catalog-col"
+                                    >
                                         <b-img
                                             fluid-grow
                                             block
@@ -70,16 +86,13 @@
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <div class="px-5 p-0 m-0 w-100">
+                        <div class="p-0 m-0 w-100">
                             <b-col
                                 class="divider"
                                 style="margin-top: 2.125rem !important"
                             ></b-col>
                         </div>
-                        <b-row
-                            class="mt-4 px-5 text-right"
-                            style="margin-bottom: 8rem"
-                        >
+                        <b-row class="mt-4 text-right" no-gutters>
                             <b-col>
                                 <button
                                     class="btn text-white transparent p-0"
@@ -102,27 +115,20 @@
                                 </button>
                             </b-col>
                         </b-row>
-                        <b-row class="text-end px-5 mt-5">
-                            <b-col cols="12" class="self-align-end copyright">
-                                <span style="font-size: 13px; color: #b591f9">
-                                    MMT™ | Multitaskr © 2022
-                                    <b-img src="/images/logo-waves.png" />
-                                </span>
-                            </b-col>
-                        </b-row>
                     </div>
                 </b-col>
             </b-row>
-        </b-container>
+
+            <b-img src="/images/mmt-multitaskr.svg" class="mmt-logo" />
+        </div>
     </div>
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
 
 export default {
-    components: {
-        Navbar,
-    },
+    layout: "main",
+
     methods: {
         redirect() {
             this.$router.push("/calculator");
@@ -130,7 +136,7 @@ export default {
     },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .main-container {
     display: flex;
 }
@@ -148,23 +154,10 @@ export default {
 }
 .bg-img {
     background: url("/images/purple-glass.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.bg-blur-light:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 70px;
-    background: linear-gradient(279.22deg, #ffffff 6.34%, #f7f7f7 84.78%),
-        linear-gradient(0deg, #ebb4ff, #f1d4ff);
-    background-blend-mode: soft-light, screen, normal;
-    mix-blend-mode: hard-light;
-    opacity: 0.2;
-    box-shadow: -12.5392px 36.9576px 31.6779px rgba(0, 0, 0, 0.5);
-    border-radius: 5.27966px;
-}
 .divider {
     background: rgb(255, 255, 255);
     background: linear-gradient(
@@ -183,14 +176,29 @@ export default {
 }
 .square:after {
     content: "";
+    border: 6px solid #ffffff;
     position: absolute;
-    top: 19%;
-    left: 18%;
-    width: 69%;
-    height: 90%;
-    border: 4px solid #ffffff;
+    width: 100%;
+    height: 100%;
 }
 button:focus {
     box-shadow: none;
+}
+
+.grid-catalog {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+
+    .grid-catalog-col {
+        padding-right: 7.5px;
+        padding-left: 7.5px;
+    }
+}
+
+.mmt-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 24px 48px;
 }
 </style>
